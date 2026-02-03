@@ -27,8 +27,23 @@ const LandingPage = () => {
                 }`}>
                 <div className="container mx-auto px-6 flex items-center justify-between">
                     {/* Logo */}
-                    <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
-                        <div className="text-3xl">📚</div>
+                    <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/landing')}>
+                        <div
+                            className="nav-logo"
+                            onClick={() => scrollToSection('home')}
+                            style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+                        >
+                            <span className="text-xl font-bold text-primary-700" style={{ marginRight: '8px' }}>
+                                🇰🇷
+                            </span>
+                            <span className="text-xl font-bold text-primary-700" style={{ marginRight: '8px' }}>
+                                <img
+                                    src="https://flagcdn.com/w20/kr.png"
+                                    alt="Korean Flag"
+                                    style={{ width: '24px', verticalAlign: 'middle' }}
+                                />
+                            </span>
+                        </div>
                         <span className="text-xl font-bold text-primary-700">
                             {t('landing.nav.title', 'Korean Vitamin')}
                         </span>
@@ -117,7 +132,7 @@ const LandingPage = () => {
                         </div>
 
                         {/* Right Image/Illustration */}
-                        <div className="relative animate-float">
+                        <div className="relative">
                             <div className="bg-white rounded-2xl shadow-2xl p-8">
                                 <img
                                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
@@ -126,11 +141,11 @@ const LandingPage = () => {
                                 />
                             </div>
                             {/* Floating Cards */}
-                            <div className="absolute -top-6 -right-6 bg-accent-pink text-white px-6 py-3 rounded-xl shadow-lg animate-float">
+                            <div className="absolute -top-6 -right-6 bg-accent-pink text-white px-6 py-3 rounded-xl shadow-lg z-20">
                                 <div className="text-sm font-medium">⭐ 4.9/5.0</div>
                                 <div className="text-xs">2,500+ đánh giá</div>
                             </div>
-                            <div className="absolute -bottom-6 -left-6 bg-accent-blue text-white px-6 py-3 rounded-xl shadow-lg animate-float" style={{ animationDelay: '0.5s' }}>
+                            <div className="absolute -bottom-6 -left-6 bg-accent-blue text-white px-6 py-3 rounded-xl shadow-lg z-20">
                                 <div className="text-sm font-medium">🏆 Top #1</div>
                                 <div className="text-xs">Nền tảng học tiếng Hàn</div>
                             </div>
@@ -139,7 +154,7 @@ const LandingPage = () => {
                 </div>
 
                 {/* Wave Divider */}
-                <div className="absolute bottom-0 left-0 right-0">
+                <div className="absolute bottom-0 left-0 right-0 top-0.2">
                     <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white" />
                     </svg>
@@ -731,8 +746,8 @@ const LandingPage = () => {
                             <h3 className="text-lg font-bold mb-4">{t('landing.footer.contact', 'Liên hệ')}</h3>
                             <ul className="space-y-2 text-gray-400 text-sm">
                                 <li>📧 contact@koreanvitamin.vn</li>
-                                <li>📱 +84 123 456 789</li>
-                                <li>📍 Hà Nội, Việt Nam</li>
+                                <li>📱 0869627078</li>
+                                <li>📍 Lô 20, Khu B2-30, Đô thị công nghệ FPT, p. Ngũ Hành Sơn, TP. Đà Nẵng</li>
                             </ul>
                             <div className="flex gap-3 mt-4">
                                 <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition">
@@ -749,7 +764,7 @@ const LandingPage = () => {
                     </div>
 
                     <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-                        <p>© 2024 Korean Vitamin. {t('landing.footer.rights', 'Bảo lưu mọi quyền')}.</p>
+                        <p>© 2026 Korean Vitamin. {t('landing.footer.rights', 'Bảo lưu mọi quyền')}.</p>
                     </div>
                 </div>
             </footer>
