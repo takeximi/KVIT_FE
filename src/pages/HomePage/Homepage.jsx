@@ -739,7 +739,7 @@ const HomePage = () => {
             </div>
 
             <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-                <p>© 2026 Korean Vitamin. {t('landing.footer.rights', 'Bảo lưu mọi quyền')}.</p>
+                <p>© 2024 Korean Vitamin. {t('landing.footer.rights', 'Bảo lưu mọi quyền')}.</p>
             </div>
         </div>
     </footer >
