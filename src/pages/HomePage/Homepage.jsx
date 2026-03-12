@@ -1,14 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ContactModal from '../../components/ContactModal';
+import { useAuth } from '../../contexts/AuthContext';
 
 const HomePage = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const { isAuthenticated, user } = useAuth();
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+    // Ref để theo dõi việc đã redirect chưa
+    const hasRedirectedRef = useRef(false);
+
+    // Redirect nếu user đã đăng nhập
+    useEffect(() => {
+        if (isAuthenticated && user?.role && !hasRedirectedRef.current) {
+            hasRedirectedRef.current = true;
+            const roleRoutes = {
+                'ADMIN': '/admin',
+                'MANAGER': '/manager',
+                'TEACHER': '/teacher-dashboard',
+                'STAFF': '/staff',
+                'STUDENT': '/learner-dashboard',
+                'LEARNER': '/learner-dashboard'
+            };
+            const redirectPath = roleRoutes[user.role] || '/';
+            navigate(redirectPath, { replace: true });
+        }
+
+        // Reset ref khi không còn authenticated (đăng xuất)
+        if (!isAuthenticated) {
+            hasRedirectedRef.current = false;
+        }
+    }, [isAuthenticated, user, navigate]);
 
 
     return (
@@ -721,8 +748,8 @@ const HomePage = () => {
                     <h3 className="text-lg font-bold mb-4">{t('landing.footer.contact', 'Liên hệ')}</h3>
                     <ul className="space-y-2 text-gray-400 text-sm">
                         <li>📧 contact@koreanvitamin.vn</li>
-                        <li>📱 +84 123 456 789</li>
-                        <li>📍 Hà Nội, Việt Nam</li>
+                        <li>📱 0869627078</li>
+                        <li>📍 Lô 20, Khu B2-30, Đô thị công nghệ FPT, p. Ngũ Hành Sơn, TP. Đà Nẵng</li>
                     </ul>
                     <div className="flex gap-3 mt-4">
                         <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition">
