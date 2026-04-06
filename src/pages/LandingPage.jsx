@@ -427,9 +427,9 @@ const LandingPage = () => {
                         <div>
                             <h4 className="font-semibold mb-4">Liên hệ</h4>
                             <ul className="space-y-2 text-gray-400">
-                                 <li>📧 contact@koreanvitamin.vn</li>
-                                 <li>📱 0869627078</li>
-                                 <li>📍 Lô 20, Khu B2-30, Đô thị công nghệ FPT, p. Ngũ Hành Sơn, TP. Đà Nẵng</li>                    
+                                <li>Hotline: 1900 xxxx</li>
+                                <li>Email: support@k-vitamin.com</li>
+                                <li>Địa chỉ: Hà Nội, Việt Nam</li>
                             </ul>
                         </div>
                     </div>
