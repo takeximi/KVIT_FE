@@ -20,7 +20,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
-import HomePage from './pages/HomePage/HomePage.jsx';
+import HomePage from './pages/HomePage/Homepage.jsx';
 import Dashboard from './pages/Dashboard/Dashboard.jsx';
 import Curriculum from './pages/Curriculum.jsx';
 import ExamPrep from './pages/ExamPrep.jsx';
